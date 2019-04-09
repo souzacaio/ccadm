@@ -54,6 +54,7 @@ var app = {
         console.log('after init');
 
         push.on('registration', function(data) {
+            alert(1);
             console.log('registration event: ' + data.registrationId);
             document.getElementById('chave').value = data.registrationId;
 
@@ -73,11 +74,12 @@ var app = {
         });
 
         push.on('error', function(e) {
+            alert(2);
             console.log("push error = " + e.message);
         });
 
         push.on('notification', function(data) {
-			
+			alert(3);
             console.log('notification event');
             navigator.notification.alert(
                 data.message,         // message
