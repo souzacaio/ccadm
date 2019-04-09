@@ -40,6 +40,76 @@
 
     <title>Hello World</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        // app.initialize();
+         $(document).ready(function(){
+             setTimeout(function(){
+                 alert(iniciou);
+ 
+                 console.log('calling push init');
+         var push = PushNotification.init({
+             "android": {
+                 "senderID": "572833270659"
+             },
+             "browser": {},
+             "ios": {
+                 "sound": true,
+                 "vibration": true,
+                 "badge": true
+             },
+             "windows": {}
+         });
+         console.log('after init');
+ 
+         push.on('registration', function(data) {
+             alert(1);
+             console.log('registration event: ' + data.registrationId);
+             document.getElementById('chave').value = data.registrationId;
+ 
+             var oldRegId = localStorage.getItem('registrationId');
+             if (oldRegId !== data.registrationId) {
+                 // Save new registration ID
+                 localStorage.setItem('registrationId', data.registrationId);
+                 // Post registrationId to your app server as the value has changed
+             }
+ 
+             var parentElement = document.getElementById('registration');
+             var listeningElement = parentElement.querySelector('.waiting');
+             var receivedElement = parentElement.querySelector('.received');
+ 
+             listeningElement.setAttribute('style', 'display:none;');
+             receivedElement.setAttribute('style', 'display:block;');
+         });
+ 
+         push.on('error', function(e) {
+             alert(2);
+             console.log("push error = " + e.message);
+         });
+ 
+         push.on('notification', function(data) {
+             alert(3);
+             console.log('notification event');
+             navigator.notification.alert(
+                 data.message,         // message
+                 null,                 // callback
+                 data.title,           // title
+                 'Ok'                  // buttonName
+             );
+        });
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+             },2000);
+            
+ 
+         });
+         
+     
+     </script>
     <script type="text/javascript" src="cordova.js"></script>
 </head>
 
@@ -64,83 +134,7 @@
         </div>
     </div>
     
-    <script type="text/javascript">
-       // app.initialize();
-        $(document).ready(function(){
-            setTimeout(function(){
-                alert(iniciou);
-
-                console.log('calling push init');
-        var push = PushNotification.init({
-            "android": {
-                "senderID": "572833270659"
-            },
-            "browser": {},
-            "ios": {
-                "sound": true,
-                "vibration": true,
-                "badge": true
-            },
-            "windows": {}
-        });
-        console.log('after init');
-
-        push.on('registration', function(data) {
-            alert(1);
-            console.log('registration event: ' + data.registrationId);
-            document.getElementById('chave').value = data.registrationId;
-
-            var oldRegId = localStorage.getItem('registrationId');
-            if (oldRegId !== data.registrationId) {
-                // Save new registration ID
-                localStorage.setItem('registrationId', data.registrationId);
-                // Post registrationId to your app server as the value has changed
-            }
-
-            var parentElement = document.getElementById('registration');
-            var listeningElement = parentElement.querySelector('.waiting');
-            var receivedElement = parentElement.querySelector('.received');
-
-            listeningElement.setAttribute('style', 'display:none;');
-            receivedElement.setAttribute('style', 'display:block;');
-        });
-
-        push.on('error', function(e) {
-            alert(2);
-            console.log("push error = " + e.message);
-        });
-
-        push.on('notification', function(data) {
-			alert(3);
-            console.log('notification event');
-            navigator.notification.alert(
-                data.message,         // message
-                null,                 // callback
-                data.title,           // title
-                'Ok'                  // buttonName
-            );
-       });
-
-
-
-
-
-
-
-            },2000);
-           
-
-
-
-
-
-
-
-
-        });
-        
     
-    </script>
 </body>
 
 </html>
