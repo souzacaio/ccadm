@@ -1,0 +1,75 @@
+{
+  "project_info": {
+    "project_number": "572833270659",
+    "firebase_url": "https://push-284f8.firebaseio.com",
+    "project_id": "push-284f8",
+    "storage_bucket": "push-284f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572833270659:android:b3240364840ac1cb",
+        "android_client_info": {
+          "package_name": "com.controcondoadm.phonegap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDse-LU8jBv8XQE3HEMZxkO5rItNwBqi3E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "572833270659-ib6r4sqdvemvq9impd0tmfg8hc7hs9pf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "572833270659-5a6cjk6u5ti2m2vri6522qn2g50e46fq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.controlcondo.phonega",
+                "app_store_id": "1352738021"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572833270659:android:7e68445456a2d8c6",
+        "android_client_info": {
+          "package_name": "com.controlcondo.phonega"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDse-LU8jBv8XQE3HEMZxkO5rItNwBqi3E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "572833270659-ib6r4sqdvemvq9impd0tmfg8hc7hs9pf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "572833270659-5a6cjk6u5ti2m2vri6522qn2g50e46fq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.controlcondo.phonega",
+                "app_store_id": "1352738021"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
