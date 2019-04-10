@@ -19,7 +19,7 @@
 	     <preference name="android-targetSdkVersion" value="16" /> 
 	</platform>
 	<platform name="android">
-		 <preference name="phonegap-version" value="cli-8.1.1" /> 
+		 <!--<preference name="phonegap-version" value="cli-8.1.1" /> -->
 		 <preference name="android-minSdkVersion" value="19" />
 		 <preference name="show-splash-screen-spinner" value="true" /> 
 		 <preference name="auto-hide-splash-screen" value="true" />
